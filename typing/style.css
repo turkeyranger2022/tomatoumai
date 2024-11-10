@@ -1,0 +1,293 @@
+body {
+    background: url('https://media.fromsoftware.jp/eldenring/resources/images/movieandimages/screenshot/4k/60.jpg') center center no-repeat;
+    background-size: cover;
+    font-family: 'Cinzel', serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: backgroundMove 5s infinite alternate;
+}
+
+body.no-animation {
+    animation: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes backgroundMove {
+    0% { background-position: center top; }
+    100% { background-position: center bottom; }
+}
+
+.game-container {
+    display: none;
+    animation: fadeIn 1s forwards;
+    background: url('https://media.fromsoftware.jp/eldenring/resources/images/movieandimages/screenshot/4k/30.jpg') center center no-repeat;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1000px;
+    height: 600px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.left-panel, .right-panel {
+    width: 20%;
+}
+
+.center-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.word {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.romaji {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.input {
+    font-size: 20px;
+    padding: 5px;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    caret-color: transparent;
+    pointer-events: none;
+}
+
+.character-image {
+    width: 30%;
+    max-width: 100px;
+    margin-left: 10px;
+}
+
+#score, #timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFD700;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+}
+
+#score {
+    bottom: 40px;
+}
+
+#retry {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    background-color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+#retry:hover {
+    background-color: #FFC107;
+    color: black;
+    transform: scale(1.05);
+}
+
+.highlight, .highlight-romaji {
+    color: yellow;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #f27f05;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.5);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#play-button {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #FFD700;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+#play-button:hover {
+    background-color: #FFD700;
+    color: black;
+    transform: scale(1.05);
+}
+
+#wpm {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.finish-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700;
+    margin-top: 20px;
+}
+
+.result-panel h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.result-item {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.result-panel {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.result-panel.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .center-panel {
+        width: 100%;
+    }
+
+    .character-image {
+        width: 50%;
+        max-width: 150px;
+    }
+
+    .input {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 36px;
+    }
+
+    #play-button, #retry {
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+
+    .word {
+        font-size: 20px;
+    }
+
+    .romaji {
+        font-size: 16px;
+    }
+
+    .input {
+        font-size: 18px;
+    }
+
+    #score, #timer {
+        font-size: 18px;
+    }
+
+    .finish-text {
+        font-size: 20px;
+    }
+
+    .result-panel h1 {
+        font-size: 20px;
+    }
+
+    .result-item {
+        font-size: 16px;
+    }
+}

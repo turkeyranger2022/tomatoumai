@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Odyssey</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"> <!-- フォントを追加 -->
+</head>
+<body>
+  <h1 class="title">Typing Odyssey</h1>
+  <button id="play-button">Play</button> <!-- Playボタンを追加 -->
+  <div class="game-container" style="display: none;"> <!-- 初期状態で非表示 -->
+    <div class="left-panel"></div> <!-- 左側の空のdiv -->
+    <div class="center-panel">
+      <div id="character-name" class="word"></div>
+      <div id="romaji-display" class="romaji"></div>
+      <div class="input-container">
+        <div id="input-display" class="input" contenteditable="true"></div>
+        <img src="https://www.anime-chiikawa.jp/images/bg_chara_03.png" alt="Character" class="character-image" style="display: none;">
+      </div>
+      <button id="retry" style="display: none;">Retry</button> <!-- 再挑戦ボタンを追加 -->
+    </div>
+    <div class="right-panel">
+      <div id="score">Score: 0</div>
+      <div id="timer">Time: 30</div>
+    </div> <!-- 右側の空のdiv -->
+  </div>
+  
+  <!-- 効果音の追加 -->
+  <audio id="correct-sound" src="sounds/決定ボタンを押す31.mp3"></audio>
+  <audio id="incorrect-sound" src="sounds/ビープ音5.mp3"></audio>
+  <audio id="play-sound" src="sounds/決定ボタンを押す51.mp3"></audio>
+  <audio id="focus-sound" src="sounds/カーソル移動6.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
